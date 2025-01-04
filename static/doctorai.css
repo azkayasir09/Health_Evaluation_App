@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --body-font: "Poppins", sans-serif;
+  --primary-color: #0f3165;
+  --secondary-color: #090433;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header styles */
+header {
+  background-image: linear-gradient(to right, rgba(5, 47, 82, 0.9), rgba(76, 157, 227, 0.7)),
+    url("img/4.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 0.0015rem;
+}
+
+.nav__container {
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.link a {
+  padding: 0.5rem;
+  color: var(--white-color);
+}
+
+.link a:hover {
+  color: var(--white);
+}
+
+
+/* Chat container styles */
+.chat-container {
+  box-shadow: 0px 4px 8px rgb(124, 194, 234);
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(58, 148, 208, 0.7);
+  border-radius: 30px;
+  align-self: center;
+  max-width: 60%; /* Increased width */
+  margin: 100px;
+
+}
+
+/* Chat header styling */
+.chat-header h1 {
+  font-size: 2rem;
+  color: #150356;
+}
+
+.chat-header p {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Chatbot icon styling */
+.bp-widget-launcher {
+  background-image: url("{'img/about.jpeg'%}");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+}
+
+/* Button styling */
+button {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004d99;
+}
+/* Added Manualy */
+
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 768px) {
+  .nav__links {
+    display: none;
+  }
+
+  .chat-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    
+    
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+   
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600 &display=swap"
+      rel="stylesheet" />
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'aboutstyle.css' %}">
+
+    <style>
+        body::before {
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url("{% static 'img/Background.jpeg' %}");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0.5; 
+          z-index: -1; 
+        }
+      </style>
+</head>
+<body>
+    <header>
+        <nav class="section_container nav_container">
+          <div class="nav__logo">Health Evaluation Project</div>
+          <ul class="nav__links">
+           <li class="link"><a href="{% url 'home' %}">Home</a></li>
+           <li class="link"><a href="{% url 'doctor_ai' %}">AI Doctor</a></li>
+           <li class="link"><a href="{% url 'user_form'%}">Prediction Model</a></li>
+           <li class="link"><a href="{% url 'login'%}">Login</a></li>
+         </ul>
+     
+        </nav>
+        </header>
+
+    <main>
+        
+        <section id="authors-section">
+            <h1>Our Team</h1>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="{% static 'img/Screenshot (35).png' %}" />
+                        </div>
+                        <h3>Azka Yasir</h3>
+                        <p>DEVELOPER</p>
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="{% static 'img/Screenshot (35).png' %}" />
+                        </div>
+                        <h3>Insha Arif</h3>
+                        <p>DEVELOPER</p>
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="{% static 'img/Screenshot (35).png' %}" />
+                        </div>
+                        <h3>Shumail Zahra</h3>
+                        <p>DEVELOPER</p>
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="{% static 'img/Screenshot (35).png' %}" />
+                        </div>
+                        <h3>Sajida Abdul Basit</h3>
+                        <p>DEVELOPER</p>
+                        <div class="icons">
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <footer>
+        <a href="#"><span>Copyright&copy 2024 Health Evaluation</span></a>
+        <p>Mobile number: 0308-9000567<br>
+        WhatsApp number: 0356-00000345<br>
+        Facebook page: Health Evaluation<br>
+        Instagram account: @ZSS1234<br>
+        For more info, contact us.</p>
+    </footer>
+</body>
+</html>

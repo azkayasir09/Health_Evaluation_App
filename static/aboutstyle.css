@@ -1,0 +1,377 @@
+html,
+  body {
+    scroll-behavior: smooth;
+  }
+  /* General Styles */
+  
+* {
+  box-sizing: border-box;
+  padding: 3;
+  margin: 4;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: 0;
+  padding: 0rem 0rem;
+}
+
+.section__header {
+  margin-bottom: 0rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.btn {
+  padding: 0;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  color: var(--white);
+  background-color: var(--secondary-color);
+  border-radius: 1px;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-image: linear-gradient(
+      to right,
+      rgba(5, 47, 82, 0.9),
+      rgba(76, 157, 227, 0.7)
+    ),
+    url("img/login.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 0.0015rem;
+}
+
+.nav__container {
+  padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+}
+
+.nav__logo {
+  padding-top: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.nav__logo span {
+  color: var(--secondary-color);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+.link a {
+  padding: 1rem;
+  color: var(--primary-color-light);
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+
+.nav__container {
+  margin:30rem;
+  padding: 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+
+
+.link a {
+  text-decoration: none;
+  padding: 0.5rem;
+  color: white;
+}
+
+.link a:hover {
+  color: white;
+}
+
+
+  
+  .h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 3.5em;
+    color: #1f003b;
+  }
+  .row {
+    display:flex;
+    justify-content:center;
+    flex-wrap: wrap;
+  }
+  
+  .column {
+    flex: 1;
+    margin: 1em;
+    max-width: 22%; /* Adjust as needed */
+  }
+  
+  .card {
+    box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
+    padding: 3.5em 1em;
+    border-radius: 0.6em;
+    color: #1f003b;
+    cursor: pointer;
+    transition: 0.3s;
+    background: linear-gradient(to right, #6cff52, #3ec5ff);
+  }
+  
+  .card .img-container {
+    width: 8em;
+    height: 8em;
+    background-color: #a993ff;
+    padding: 0.5em;
+    border-radius: 50%;
+    margin: 0 auto 2em auto;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  
+  .card h3 {
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .card p {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0.5em 0 2em 0;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  
+  
+  .icons {
+    width: 50%;
+    min-width: 180px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.4em;
+  }
+  
+  .card:hover {
+    background: linear-gradient(#6045ea, #8567f7);
+    color: #ffffff;
+  }
+  
+  .card:hover .img-container {
+    transform: scale(1.15);
+  }
+  
+  /* Footer styling */
+footer {
+  padding: 20px;             /* Padding for spacing */
+  text-align: center;        /* Centered text */
+  margin-top: 20px;          /* Margin on top to separate from main content */
+}
+
+footer p {
+  margin: 10px 0;            /* Margin for spacing between paragraphs */
+  color: black;               
+  line-height: 1.6;          /* Line height for better readability */
+}
+span{
+  background: black;
+  background-clip: text;
+  color: transparent;
+}
+footer a{
+  margin: 10px 0;            
+  color: black;          
+  line-height: 1.6; 
+}
+
+
+
+
+/* General mobile-first approach */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Heading responsive style */
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5em; /* Adjusted for smaller screens */
+  color: #1f003b;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3em; /* Larger font for tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3.5em; /* Larger font for desktops */
+  }
+}
+
+/* Navbar responsiveness */
+.nav__container {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-size: 1.2rem; /* Smaller logo size for mobile */
+}
+
+.nav__links {
+  display: none; /* Hide on smaller screens */
+}
+
+@media (min-width: 768px) {
+  .nav__links {
+    display: flex; /* Show on larger screens */
+  }
+}
+
+/* Cards layout */
+.row {
+  display: flex;
+  flex-direction: column; /* Stack columns on smaller screens */
+  align-items: center;
+}
+
+.column {
+  max-width: 100%; /* Full width on smaller screens */
+  margin: 1em;
+}
+
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row; /* Row layout on tablets and up */
+  }
+  .column {
+    max-width: 45%; /* Two columns for tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .column {
+    max-width: 22%; /* Four columns for desktops */
+  }
+}
+
+/* Card styles */
+.card {
+  padding: 2em 1em; /* Smaller padding for mobile */
+  border-radius: 0.6em;
+  text-align: center;
+  transition: 0.3s;
+  background: linear-gradient(to right, #6cff52, #3ec5ff);
+}
+
+.card:hover {
+  background: linear-gradient(#6045ea, #8567f7);
+  color: #ffffff;
+}
+
+.img-container {
+  width: 6em; /* Smaller profile image on mobile */
+  height: 6em;
+  margin: 1em auto;
+}
+
+@media (min-width: 768px) {
+  .img-container {
+    width: 8em; /* Larger profile image for tablets and up */
+    height: 8em;
+  }
+}
+
+/* Icon styles */
+.icons {
+  width: 70%; /* Smaller icon container for mobile */
+  min-width: 120px;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  .icons {
+    width: 50%; /* Larger width for tablets and up */
+  }
+}
+
+/* Footer styling */
+footer {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9em; /* Smaller text for mobile */
+
+}
+
+@media (min-width: 768px) {
+  footer {
+    font-size: 1em; /* Larger font for tablets and up */
+  }
+}
+
+footer p {
+  color: black;
+  line-height: 1.6;
+}
+
+footer a {
+  color: black;
+  line-height: 1.6;
+}

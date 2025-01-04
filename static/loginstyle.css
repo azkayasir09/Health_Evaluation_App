@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --body-font: "Poppins", sans-serif;
+  --primary-color: #0f3165;
+  --primary-color-light: #e9f7f7;
+  --secondary-color: #090433;
+  --text-dark: #333333;
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: var(--body-font);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== HEADER & NAV ===============*/
+header {
+  background-image: linear-gradient(
+      to right,
+      rgba(5, 47, 82, 0.9),
+      rgba(76, 157, 227, 0.7)
+    ),
+    url("img/5.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.nav__container {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color:white;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.link a {
+  padding: 0.5rem;
+  color: var(--primary-color-light);
+}
+
+.link a:hover {
+  color: var(--white);
+}
+
+/*=============== LOGIN FORM ===============*/
+.login {
+  position: relative;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+
+.login__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login__form {
+  position: relative;
+  margin-inline: 25rem;
+  background-color: hsla(0, 0%, 100%, .01);
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding: 2.5rem 1rem;
+  color: var(--white-color);
+  border-radius: 1rem;
+  backdrop-filter: blur(16px);
+}
+
+.login__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.login__inputs {
+  display: grid;
+  row-gap: 1.25rem;
+}
+
+.login__box {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  column-gap: .75rem;
+  align-items: center;
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding-inline: 1.25rem;
+  border-radius: 4rem;
+}
+
+.login__input {
+  width: 100%;
+  background: none;
+  color: var(--white-color);
+  padding-block: 1rem;
+  border: none;
+  outline: none;
+}
+
+.login__input::placeholder {
+  color: var(--white-color);
+}
+
+.login__check,
+.login__check-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login__check {
+  margin-bottom: 1rem;
+  font-size: .813rem;
+}
+
+.login__check-input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--white-color);
+}
+
+.login__forgot {
+  color: var(--white-color);
+}
+
+.login__forgot:hover {
+  text-decoration: underline;
+}
+
+.login__button {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--white-color);
+  border-radius: 4rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media (max-width: 780px) {
+  .nav__links {
+    display: inline;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .login__form {
+    width: 420px;
+    margin-inline: 1rem;
+  }
+
+  .login__title {
+    margin-bottom: 2rem;
+  }
+}

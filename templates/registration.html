@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+      <!--=============== CSS ===============-->
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'registration.css' %}"> 
+    
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+      <style>
+        body {
+         margin: 0; 
+         height: 100%; 
+         background:url("{% static 'img/6.jpeg' %}") no-repeat center center;
+         background-size: cover; 
+        background-attachment: fixed;      
+        }
+        .card{
+        background-color: rgba(138, 187, 241, 0.75);
+        border-radius: 30px; 
+        padding: 120px; 
+        box-shadow: 0 20px 10px rgba(0, 0, 0, 0.25);
+        max-width: 400px; 
+        width: 100%; 
+       } 
+       h3{
+            text-align: center;
+        } 
+    </style> 
+
+      <title>User Health Data Input</title>
+   </head>
+   <body>
+         <body class="bg-light">
+            <div class="container d-flex justify-content-center align-items-center vh-100">
+                <div class="card p-4 shadow-lg">
+                    <h3 class="text-center mb-4">Registration Form</h3>
+                    <form id="registrationForm" method="post" action="{% url 'registration' %}">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <div class="mb-3">
+                            <label for="first_name" class="form-label">First Name:</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="last_name" class="form-label">Last Name:</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" required>
+                    
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                           
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                             
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirm_password" class="form-label">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                            <div class="text-danger mt-2 error-message" id="passwordError">Passwords do not match!</div>
+                            <div class="text-success mt-2 success-message" id="passwordSuccess">Passwords match!</div>
+                            
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p class="mb-0">Already have an account? <a href="{% url 'login' %}" class="text-primary">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+       
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="{% static 'register.js'%}"></script>
+      
+</body>
+</html>

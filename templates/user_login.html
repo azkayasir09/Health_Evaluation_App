@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+   {% load static %}
+   <link rel="stylesheet" href="{% static 'loginstyle.css' %}">
+   <title>Login Form</title>
+</head>
+<body>
+   <header>
+      <nav class="section__container nav__container">
+         <div class="nav__logo">Health Evaluation Project</div>
+      </nav>
+   </header>
+   
+   <div class="login">
+      <img src="{% static 'img/5.jpeg' %}" alt="image" class="login__bg"> 
+      <form method="post" action="{% url 'login' %}" class="login__form">
+         {% csrf_token %}
+         <h1 class="login__title">Login</h1>
+
+         {% if messages %}
+         <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+         </ul>
+         {% endif %}
+
+         <div class="login__inputs">
+            <div class="login__box">
+               <input type="email" placeholder="Email ID" required class="login__input" name="email">
+               <i class="ri-mail-fill"></i>
+            </div>
+            <div class="login__box">
+               <input type="password" placeholder="Password" required class="login__input" name="password">
+               <i class="ri-lock-2-fill"></i>
+            </div>
+         </div>
+
+         <div class="login__check">
+            <a href="{% url 'registration' %}" class="login__forgot">Don't have an account? Register here!</a>
+         </div>
+         <button type="submit" class="login__button">Login</button>
+      </form>
+   </div>
+
+  
+</body>
+</html>

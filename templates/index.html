@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+   
+    <title>Health Evaluation Project</title>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="section__container nav__container">
+        <div class="nav__logo">Health<span> Evaluation</span> Project</div>
+        <ul class="nav__links">
+         <li class="link"><a href="#home">Home</a></li>
+          <li class="link"><a href="{% url 'user_form' %}">Prediction Model</a></li>
+          <li class="link"><a href="{% url 'doctor_ai'%}">AI Doctor</a></li>
+          <li class="link"><a href="{% url 'about_us' %}">Our Team</a></li>
+          <li class="link"><a href="#about">About us</a></li>
+         
+        </ul>
+        
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}"><button class="btn">Logout</button></a>
+      {% else %}
+        <a href="{% url 'login' %}"><button class="btn">Login Here</button></a>
+      {% endif %}
+      </nav>
+      <div class="section__container header__container" id="home">
+        <div class="header__content">
+          <h1>Schedule Your Evaluation Today!!</h1>
+          <p>
+            Welcome to our Website,Where exceptional health experiences are our priority. With innovative technology, personalized health evaluations, and a user-centered approach, we're dedicated to your well-being. Trust us with your health and experience the difference.
+          </p>
+          <button class="btn"><a href="#service">See Services</a></button>
+        </div>
+        <div class="header__form">
+          <form id="index" method="post" action="{% url 'home' %}">
+            {% csrf_token %}
+             {{form.as_p}} 
+            <h4>Share Your Feedback</h4>
+            <input type="text" placeholder="Name" name="name">
+            <input type="email" placeholder="Email" name="email">
+            <input type="text" placeholder="Write here" name="desc">
+            <button type="submit" class="btn form__btn">Submit </button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <script>
+      document.getElementById('index').addEventListener('submit', function(event) {
+          event.preventDefault();
+          alert('Feedback submitted successfully!');
+      });
+  </script>  
+
+    <section class="section__container service__container" id="service">
+      <div class="service__header">
+        <div class="service__header__content">
+          <h2 class="section__header">Our Special services</h2>
+          <p>
+            Our special services include comprehensive health evaluations with predictive analytics and 24/7 AI-driven medical support. We offer personalized insights, secure data management, and a user-friendly interface for an optimal health experience.
+          </p>
+        </div>
+        <button class="service__btn" ><a href="{% url 'doctor_ai'%}">Ask A Service</a></button>
+      </div>
+      <div class="service__grid">
+        <div class="service__card">
+          <span><i class="ri-bar-chart-line"></i></span>
+          <h4>Health Evaluations using Prediction Model</h4>
+          <p>
+            Our prediction model analyzes your health measurements to determine your current health status. It evaluates your data against health benchmarks, providing a clear indication of whether you are "Healthy," "At Risk," or "Needs Attention,"
+          </p>
+        </div>
+        <div class="service__card">
+          <span><i class="ri-information-line"></i></span>
+          <h4>AI Doctor Chatbot</h4>
+          <p>
+            Get 24/7 medical advice and support from our advanced AI chatbot,
+             designed to provide accurate answers and personalized guidance based on extensive healthcare knowledge.
+             Additionally, it provides responses to queries that fall outside the scope of healthcare knowledge.
+
+
+          </p>
+        </div>
+        <div class="service__card">
+          <span><i class="ri-user-line"></i></span>
+          <h4>User-friendly Interface</h4>
+          <p>
+            
+            Our site features a user-friendly dashboard with key health metrics, interactive charts, and personalized recommendations. It offers responsive design, robust security, and data protection.
+             Clear calls to action, accessible support, and integration with health tools enhance the user experience.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section__container about__container" id="about">
+      <div class="about__content">
+        <h2 class="section__header">About Us</h2>
+        <p>
+          Welcome to our Health website,we transform health management with advanced technology and predictive analytics.
+           Our platform provides detailed health evaluations and forecasts potential risks, empowering users to make informed decisions about their well-being.
+        </p>
+        <p>
+          Our user-friendly interface offers easy access to health metrics, interactive charts, and personalized recommendations
+           while ensuring robust data security and privacy. Our AI-driven chatbot provides 24/7 support and reliable medical advice.
+        </p>
+        <p>
+          Dedicated to improving health outcomes, we integrate seamlessly with health tools and wearables, enabling users
+           to track their progress and stay connected with their wellness goals. Whether you’re managing chronic conditions or
+            seeking to enhance your overall well-being, Health Evaluation App is your trusted partner in achieving a healthier, more informed lifestyle.
+        </p>
+      </div>
+      <div class="about__image">
+        <img src="{% static 'img/about.jpeg'%}">
+      </div>
+    </section>
+
+    <section class="section__container why__container" id="blog">
+      <div class="why__image">
+        <img src="{% static 'img/whychooseus.jpeg'%}">
+      </div>
+      <div class="why__content">
+        <h2 class="section__header">Why Choose Us</h2>
+        <p>
+      
+
+          Choose Health Evaluation App for advanced technology, personalized insights, and comprehensive health evaluations. 
+          Our user-friendly platform offers 24/7 AI support, security, and seamless integration with health tools, helping you 
+          achieve and maintain your wellness goals.
+
+
+        </p>
+        <div class="why__grid">
+          <span><i class="ri-computer-line"></i></span>
+          <div>
+            <h4>Expertise and Innovation</h4>
+            <p>
+              Combining the latest in medical research with state-of-the-art technology.
+            </p>
+          </div>
+          <span><i class="ri-lock-line"></i></span>
+          <div>
+            <h4>Privacy and Security</h4>
+            <p>
+              Your health data is treated with the utmost care, ensuring confidentiality and security at all times.
+            </p>
+          </div>
+          <span><i class="ri-heart-line"></i></span>
+          <div>
+            <h4>Effective Wellness</h4>
+            <p>
+              Achieve and maintain your health goals with our comprehensive resources.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h3>Health<span>Evaluation</span>Project</h3>
+          <p>
+            We’re dedicated to revolutionizing your health management with our advanced technology and personalized insights.
+             Explore our comprehensive health evaluations, predictive analytics, and user-friendly interface designed to keep you 
+             informed and proactive about your well-being.
+          </p>
+          <p>
+            For support, privacy information, or to learn more about our services, please visit our Contact Us, Privacy Policy, and Terms of Service pages. Stay 
+            updated with our latest news and resources, and connect with us on social media for tips and updates. Your health journey starts here!
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Home</h4>
+          <p>About-Us</p>
+          <p>Doctor_AI</p>
+          <p>User Profile</p>
+          <p>User Login</p>
+      
+        </div>
+        <div class="footer__col">
+          <h4>About Us</h4>
+          <p>Our Services</p>
+          <p>FAQs</p>
+          <p>User Reviews</p>
+          <p>Careers</p>
+          <p>Privacy Policies</p>
+          <p>Terms & Conditions</p>
+          <p></p>
+        </div>
+        <div class="footer__col">
+          <h4>Contact Us</h4>
+          <p>
+            <i class="ri-map-pin-2-fill"></i> 123, MAO College,Lahore
+          </p>
+          <p><i class="ri-mail-fill"></i> Usersupport@gmail.com</p>
+          <p><i class="ri-phone-fill"></i> (+92) 3456 789</p>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <div class="footer__bar__content">
+          <p> copyright © 2024 ,Health Evaluation Project. All rights reserved.</p>
+          <div class="footer__socials">
+            <span><i class="ri-instagram-line"></i></span>
+            <span><i class="ri-facebook-fill"></i></span>
+            <span><i class="ri-heart-fill"></i></span>
+            <span><i class="ri-twitter-fill"></i></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

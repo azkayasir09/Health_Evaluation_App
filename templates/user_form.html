@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+      
+       {% load static%}
+      <link rel="stylesheet" href="{% static 'uformstyle.css' %}"> 
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+      <style>
+        body {
+         margin: 0; 
+         height: 100%; 
+         background:url("{% static 'img/login.png' %}") no-repeat center center;
+         background-size: cover; 
+        background-attachment: fixed;       
+        }
+       .card{
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); 
+        backdrop-filter: blur(5px); 
+       }
+       login{
+            text-align: center;
+        }
+    </style> 
+
+      <title>Prediction Model</title>
+   </head>
+   <body>
+   <header>
+         <nav class="section__container nav__container">
+         <div class="nav__logo">Health Evaluation Project</div>
+            <ul class="nav__links">
+            <li class="link"><a href="{% url 'home' %}">Home</a></li>
+             <li class="link"><a href="/about_us">Our Team</a></li>
+             <li class="link"><a href="{% url 'doctor_ai'%}"> AI Doctor</a></li>
+             <li class="link"><a href="{% url 'login'%}">Login</a></li>
+           </ul>
+         </nav>
+         </header>
+        <div class="login">
+        <div class="container">
+        <div class="row justify-content-center mt-5">
+        <div class="col-md-15">
+        <div class="card p-5">
+        <h3 class="text-center mb-3">Health Evaluation Form</h3>
+        <form method="post">
+        {% csrf_token %}             
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+                          
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+                          
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex" required>
+        <option value="0">Female</option>
+        <option value="1">Male</option>
+        </select><br><br>
+                          
+        <label for="chest_pain_type">Chest Pain Type:</label>
+        <select id="chest_pain_type" name="chest_pain_type" required>
+        <option value="0">ATA</option>
+        <option value="1">NAP</option>
+        <option value="2">ASY</option>
+        <option value="3">TA</option>
+        </select><br><br>
+                          
+        <label for="resting_ecg">Resting ECG:</label>
+        <select id="resting_ecg" name="resting_ecg" required>
+        <option value="0">Normal</option>
+        <option value="1">ST</option>
+        <option value="2">LVH</option>
+        </select><br><br>
+                          
+        <label for="exercise_angina">Exercise Angina:</label>
+        <select id="exercise_angina" name="exercise_angina" required>
+        <option value="0">Yes</option>
+        <option value="1">No</option>
+        </select><br><br>
+                          
+        <label for="st_slope">ST Slope:</label>
+        <select id="st_slope" name="st_slope" required>
+        <option value="0">Up</option>
+        <option value="1">Flat</option>
+        <option value="2">Down</option>
+        </select><br><br>
+                          
+        <label for="fasting_bs">Fasting Blood Sugar:</label>
+        <select id="fasting_bs" name="fasting_bs" required>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+        </select><br><br>
+                          
+        <label for="oldpeak">Oldpeak:</label>
+        <input type="number" step="0.1" min="-2.6" max="6.2" id="oldpeak" name="oldpeak" required><br><br>
+                          
+        <label for="max_heart_rate">Max Heart Rate:</label>
+        <input type="number" min="60" max="202" id="max_heart_rate" name="max_heart_rate" required><br><br>
+                          
+        <button type="submit" class="login__button">Submit</button>
+        </form>
+        {% if prediction_message %}
+        <h2>Prediction Result:<br> {{ prediction_message }}</h2>
+        {% endif %}
+         </div>
+        </div>
+        </div>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+    
+
+
+
+    
