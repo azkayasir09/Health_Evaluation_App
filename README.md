@@ -1,9 +1,3 @@
-# Health_Evaluation_App
- 
-Here is a detailed README.md file for your *Health Evaluation App*:
-
----
-
 # Health Evaluation App
 
 ## Overview
@@ -150,7 +144,7 @@ print("Prediction:", "No Heart Disease" if prediction[0] == 0 else "Heart Diseas
 ---
 
 ## License
-This project is licensed under the Apache 2. Feel free to use and modify it for personal or commercial purposes.
+This project is licensed under the Apache License 2.0. Feel free to use and modify it for personal or commercial purposes.
 
 ---
 
